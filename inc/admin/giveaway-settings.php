@@ -1,8 +1,9 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 require_once __DIR__.'/menu/wxgiveaway-dashboard-left-sid.php';
 require_once('giveaway-options.php');
-add_filter( 'product_type_options', 'wxgive_enable_giveaway');
-function wxgive_enable_giveaway( $product_type_options ) {
+add_filter( 'product_type_options', 'wxgiveaway_enable_giveaway');
+function wxgiveaway_enable_giveaway( $product_type_options ) {
     global $post;
     $product_type_options['giveaways'] = array(
         'id'            => '_enable_giveaway',
@@ -102,7 +103,8 @@ function wxgiveaway_giveaway_settings_fields() {
         array(
             'id'            => '_ticket_range',
             'wrapper_class' => '',
-            'label'         => esc_html__( 'Ticket range (' . WXGIVEAWAY_TICKET_MIN_VALUE . ' - ' . WXGIVEAWAY_TICKET_MAX_VALUE . ')', 'giveaway-lottery' ),
+            // 'label'         => esc_html__( 'Ticket range (' . WXGIVEAWAY_TICKET_MIN_VALUE . ' - ' . WXGIVEAWAY_TICKET_MAX_VALUE . ')', 'giveaway-lottery' ),
+            'label'         => printf(	__( '(Your city is %d - %d)', 'giveaway-lottery' ),	WXGIVEAWAY_TICKET_MIN_VALUE, WXGIVEAWAY_TICKET_MAX_VALUE),
             'type'          => 'text',
             'value'         => esc_attr( get_post_meta( $post->ID, '_ticket_range', true ) )
         )

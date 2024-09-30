@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 // Ticket Checker Short code from
 add_shortcode('ticket-check','wxgiveaway_ticket_checker_short_code_fun');
 function wxgiveaway_ticket_checker_short_code_fun($jekono){ 

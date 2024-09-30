@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 // giveaway add to cart validation
 add_filter('woocommerce_add_to_cart_validation', 'wxgiveaway_giveaway_add_to_cart_validation', 10, 3);
 function wxgiveaway_giveaway_add_to_cart_validation($passed, $product_id, $quantity) {
