@@ -1,12 +1,12 @@
 # Giveaway Lottery
 
-**Contributors:** Team WooXperto  
-**Requires at least:** 5.0  
-**Tested up to:** 6.3  
-**Requires PHP:** 7.2  
-**Stable tag:** 1.0.0  
-**License:** GPL v2 or later  
-**License URI:** https://www.gnu.org/licenses/old-licenses/gpl-2.0.html  
+**Contributors:** Team WooXperto
+**Requires at least:** 5.0
+**Tested up to:** 6.6.2
+**Requires PHP:** 7.2
+**Stable tag:** 1.0.0
+**License:** GPL v2 or later
+**License URI:** https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 A comprehensive Giveaway management system based on WooCommerce WordPress. Designed, Developed, Maintained & Supported by WooXperto.
 

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 // wp admin Dashboard Left side menu page for Giveaway Setting
 function wxgiveaway_setting_page() {
     ob_start();
@@ -69,7 +70,7 @@ function wxgiveaway_setting_page() {
                     <td>
                         <input type="hidden" name="action" value="update">
                         <input type="hidden" name="page_options" value="wxgiveaway_settings">
-                        <input class="button button-primary button-large" type="submit" name="submit" value="<?php esc_attr_e('Save Settings', 'wxgiveaways'); ?>">
+                        <input class="button button-primary button-large" type="submit" name="submit" value="<?php esc_attr_e('Save Settings', 'giveaway-lottery'); ?>">
                     </td>
                 </tr>
             </table>

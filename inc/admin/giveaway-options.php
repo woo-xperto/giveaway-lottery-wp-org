@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 /*Add ticket custom column Section at products data grid*/
 if( !function_exists('wxgiveaway_add_tickets_columns')){
     function wxgiveaway_add_tickets_columns($columns){

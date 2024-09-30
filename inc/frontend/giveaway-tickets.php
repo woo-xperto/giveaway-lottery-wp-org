@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 /**
  * Utility method to create ticket number for each line item from order 
  */

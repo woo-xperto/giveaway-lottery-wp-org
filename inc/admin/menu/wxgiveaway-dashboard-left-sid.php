@@ -1,6 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 require_once 'wxgiveaway_setting_page.php';
-// Dashboard Left side menu 
+// Dashboard Left side menu
 if(!function_exists('wxgiveaway_wp_admin_dashboard_menu_reg_pro')){
   add_action("admin_menu", "wxgiveaway_wp_admin_dashboard_menu_reg");
   function wxgiveaway_wp_admin_dashboard_menu_reg() {
