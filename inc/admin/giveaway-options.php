@@ -25,8 +25,8 @@ if( !function_exists("wxgiveaway_ticket_column_content")){
                 $allocated_entries=wxgiveaway_get_total_number_of_tickets($post_id);
 
                 global $wpdb;
-                $table_name = $wpdb->prefix.'wx_giveaway'; 
-                $query = $wpdb->prepare("SELECT COUNT(id) FROM $table_name WHERE giveaways_id = $post_id");    
+                $table_name = 'wx_giveaway'; 
+                $query = $wpdb->prepare("SELECT COUNT(id) FROM %s%s WHERE giveaways_id = %d",$wpdb->prefix,$table_name,$post_id);    
                 $row_counts = $wpdb->get_var($query);
                 
                 echo esc_html__( 'Allocated:', 'giveaway-lottery' ) . ' <b>' . esc_html( number_format( $allocated_entries ) ) . '</b>,<br/>' .
@@ -60,12 +60,12 @@ add_action('init',function(){
             $giveaway_id=sanitize_text_field($_GET['giveaway_id']);
             global $wpdb;
 
-            $table_name = $wpdb->prefix.'wx_giveaway';
+            $table_name = 'wx_giveaway';
+            $query = $wpdb->prepare("SELECT a.order_id,a.ticket_no
+            FROM %s%s a 
+            WHERE a.giveaways_id = %d order by a.order_id",$wpdb->prefix,$table_name,$giveaway_id);
 
-            $sql="SELECT a.order_id,a.ticket_no
-            FROM {$table_name} a 
-            WHERE a.giveaways_id = {$giveaway_id} order by a.order_id";
-            $rows = $wpdb->get_results($sql);
+            $rows = $wpdb->get_results($query);
 
             if($rows){
                 $filename = "export_tickets_".time()."-".$giveaway_id.".csv";

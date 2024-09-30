@@ -146,7 +146,3 @@ function wxgiveaway_backend_assets() {
 require_once 'inc/admin/giveaway-settings.php';
 require_once 'inc/frontend/giveaway-tickets.php';
 require_once 'inc/frontend/wxgiveaway-function.php';
-
-
-
-

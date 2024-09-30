@@ -2,8 +2,6 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 // wp admin Dashboard Left side menu page for Giveaway Setting
 function wxgiveaway_setting_page() {
-    ob_start();
-
     echo '<h1>' . esc_html__('Giveaways Settings', 'giveaway-lottery') . '</h1><hr>';
     if (defined("WXGIVEAWAY_SETTINGS")) {
         $settings = WXGIVEAWAY_SETTINGS;
@@ -41,7 +39,7 @@ function wxgiveaway_setting_page() {
                     <th><?php echo esc_html__('Send tickets by email?', 'giveaway-lottery'); ?></th>
                     <td>
                         <?php
-                        $ticket_send = isset($settings['ticket_send']) ? $settings['ticket_send'] : '';
+                        $ticket_send = (isset($settings['ticket_send']) ? $settings['ticket_send'] : '');
                         ?>
                         <input type="checkbox" name="wxgiveaway_settings[ticket_send]" <?php checked($ticket_send); ?>>
                     </td>
@@ -77,9 +75,6 @@ function wxgiveaway_setting_page() {
         </form>
     </div>
     <?php
-    $from_html = ob_get_clean();
-
-    $wx_setting_from = apply_filters('wxgiveaway_giveway_setting_from_html', $from_html);
-    echo $wx_setting_from;
+    
 }
 ?>
