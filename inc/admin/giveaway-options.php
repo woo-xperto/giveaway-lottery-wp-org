@@ -56,7 +56,6 @@ if( !function_exists("wxgiveaway_ticket_column_content")){
 add_action('init',function(){
     if(is_admin()){
         if(isset($_GET['export_tickets'])){
-            ini_set('max_execution_time', 600); 
             $giveaway_id=sanitize_text_field($_GET['giveaway_id']);
             global $wpdb;
 
